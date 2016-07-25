@@ -1,0 +1,19 @@
+<div class="container">
+  <%= @user.first_name %>
+  <%= @user.last_name %>
+  <%= @user.email %>
+</div>
+
+<div class="container">
+  <% if @microposts.any? %>
+      <h3>Microposts (<%= @microposts.count %>)</h3>
+      <ol class="microposts">
+        <% @microposts.each do |m| %>
+        <li>
+          <%= m.content %>
+        </li>
+        <% end %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+</div>
